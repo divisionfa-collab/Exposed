@@ -10,71 +10,154 @@
     <script src="../assets/js/password-tool.js"></script>
     <script src="../assets/js/support.js"></script>
     <style>
+        body {
+            font-family: "Tahoma", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+        }
+
+        /* ✅ قسم الأدوات */
         .sections {
-            padding: 4rem 2rem;
+            padding: 3rem 1rem;
             background: white;
         }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+        }
+
         .cards-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
             max-width: 1200px;
             margin: 0 auto;
         }
+
         .card {
             background: white;
-            padding: 2rem;
-            border-radius: 20px;
+            padding: 1.5rem;
+            border-radius: 15px;
             text-align: center;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
         }
+
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
         }
+
         .card-icon {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 1.2rem;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
             background: linear-gradient(135deg, #1e3c72, #2a5298);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: white;
         }
+
         .card h3 {
             color: #1e3c72;
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
         }
+
         .card p {
             color: #666;
             line-height: 1.6;
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
         }
+
         .tool input, .check-link input {
-            padding: 0.8rem;
-            width: 80%;
-            margin: 0.5rem auto;
+            padding: 0.7rem;
+            width: 100%;
+            margin: 0.5rem 0;
             border: 1px solid #ccc;
             border-radius: 8px;
+            font-size: 1rem;
         }
+
         .tool button, .check-link button {
             background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: white;
             border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
+            padding: 0.7rem 1.2rem;
+            border-radius: 20px;
             cursor: pointer;
             transition: all 0.3s ease;
+            width: 100%;
         }
+
         .tool button:hover, .check-link button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(42, 82, 152, 0.4);
+            transform: scale(1.03);
+            box-shadow: 0 4px 15px rgba(42, 82, 152, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            background: #1e3c72;
+            color: white;
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* ✅ تحسينات للجوال */
+        @media (max-width: 768px) {
+            header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem;
+                text-align: center;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.8rem;
+                margin-top: 1rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+                padding: 0.5rem 0.8rem;
+                border-radius: 8px;
+                background: #f0f0f0;
+            }
+
+            .section-title h2 {
+                font-size: 1.4rem;
+            }
+
+            .card {
+                padding: 1.2rem;
+            }
+
+            .card h3 {
+                font-size: 1.1rem;
+            }
+
+            .card p {
+                font-size: 0.9rem;
+            }
+
+            .tool input, .check-link input {
+                font-size: 0.9rem;
+            }
+
+            .tool button, .check-link button {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
