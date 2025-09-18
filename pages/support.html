@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قسم المساعدة | مكشوف؟ / Exposed!</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/icons/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <script src="../assets/js/password-tool.js"></script>
+    <script src="../assets/js/support.js"></script>
+    <style>
+        .sections {
+            padding: 4rem 2rem;
+            background: white;
+        }
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.2rem;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+        .card h3 {
+            color: #1e3c72;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+        .card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .tool input, .check-link input {
+            padding: 0.8rem;
+            width: 80%;
+            margin: 0.5rem auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .tool button, .check-link button {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .tool button:hover, .check-link button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(42, 82, 152, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- ✅ الهيدر -->
+    <header>
+        <div class="logo">
+            <img src="../assets/images/logo.png" alt="Exposed Logo" width="60">
+            <h1>مكشوف؟ <span>/ Exposed!</span></h1>
+        </div>
+        <nav>
+            <a href="index.html"><span>الرئيسية</span></a>
+            <a href="awareness.html"><span>التوعية</span></a>
+            <a href="support.html" class="active"><span>المساعدة</span></a>
+            <a href="protection.html"><span>الحماية</span></a>
+            <a href="contact.html"><span>تواصل معنا</span></a>
+        </nav>
+    </header>
+
+    <!-- ✅ قسم المساعدة -->
+    <section class="sections">
+        <div class="section-title">
+            <h2>🛠️ أدوات المساعدة</h2>
+            <p>هنا ستجد أدوات ودلائل سريعة لمساعدتك إذا تعرضت لاختراق أو أردت تعزيز أمانك</p>
+        </div>
+
+        <div class="cards-container">
+            <!-- ✅ دليل المساعدة -->
+            <div class="card guide">
+                <div class="card-icon">📌</div>
+                <h3>ماذا تفعل إذا تم اختراق حسابك؟</h3>
+                <p>اتبع الخطوات التالية لحماية نفسك وتقليل الضرر</p>
+                <ol style="text-align:right; padding-right:20px;">
+                    <li>غير كلمة المرور فورًا.</li>
+                    <li>فعّل المصادقة الثنائية (2FA).</li>
+                    <li>راجع الأجهزة المتصلة بحسابك.</li>
+                    <li>أبلغ الجهة الرسمية أو المنصة.</li>
+                </ol>
+            </div>
+
+            <!-- ✅ أداة توليد كلمات مرور -->
+            <div class="card tool">
+                <div class="card-icon">🔑</div>
+                <h3>مولّد كلمات مرور</h3>
+                <p>اختر طول كلمة المرور ثم اضغط توليد</p>
+                <input type="number" id="passLength" value="12" min="6" max="32">
+                <button type="button" onclick="showPassword()">توليد</button>
+                <p><strong>النتيجة:</strong></p>
+                <input type="text" id="generatedPass" readonly>
+            </div>
+
+            <!-- ✅ أداة فحص الروابط -->
+            <div class="card check-link">
+                <div class="card-icon">🔗</div>
+                <h3>فحص الروابط</h3>
+                <p>أدخل الرابط للتحقق مما إذا كان آمنًا</p>
+                <form id="linkForm">
+                    <input type="url" id="linkInput" placeholder="https://example.com" required>
+                    <button type="submit">فحص</button>
+                </form>
+                <div id="linkResult"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ الفوتر -->
+    <footer>
+        <p>© 2025 مكشوف؟ / Exposed! جميع الحقوق محفوظة</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,90 @@
+/* 📱 تصميم متجاوب للجوال والتابلت */
+
+/* للأجهزة المتوسطة (التابلت) */
+@media (max-width: 992px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    .sections {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+/* للأجهزة الصغيرة (الجوال) */
+@media (max-width: 600px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    header .logo img {
+        width: 45px;
+    }
+
+    header .logo h1 {
+        font-size: 20px;
+    }
+
+    header .logo span {
+        font-size: 14px;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px 0;
+        font-size: 16px;
+    }
+
+    .hero {
+        padding: 60px 15px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .sections {
+        padding: 30px 10px;
+    }
+
+    .card {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .card h3 {
+        font-size: 18px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
+}

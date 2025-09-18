@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا | مكشوف؟ / Exposed!</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/icons/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <style>
+        .sections {
+            padding: 4rem 2rem;
+            background: white;
+        }
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .card {
+            width: 100%;
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+            text-align: right;
+        }
+        form input, form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        form button {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        form button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(42, 82, 152, 0.4);
+        }
+        #contactResult {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- ✅ الهيدر -->
+    <header>
+        <div class="logo">
+            <img src="../assets/images/logo.png" alt="Exposed Logo" width="60">
+            <h1>مكشوف؟ <span>/ Exposed!</span></h1>
+        </div>
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="awareness.html">التوعية</a>
+            <a href="support.html">المساعدة</a>
+            <a href="protection.html">الحماية</a>
+            <a href="contact.html" class="active">تواصل معنا</a>
+        </nav>
+    </header>
+
+    <!-- ✅ نموذج تواصل -->
+    <section class="sections">
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-icon">📩</div>
+                <h2 style="text-align:center;">أرسل لنا رسالة</h2>
+                <form id="contactForm">
+                    <label for="name">الاسم:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">البريد الإلكتروني:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">الرسالة:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit">إرسال</button>
+                </form>
+                <div id="contactResult"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ الفوتر -->
+    <footer>
+        <p>© 2025 مكشوف؟ / Exposed! جميع الحقوق محفوظة</p>
+    </footer>
+
+    <!-- سكربت بسيط -->
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            document.getElementById("contactResult").style.color = "green";
+            document.getElementById("contactResult").textContent = "✅ تم إرسال رسالتك بنجاح (محاكاة).";
+            this.reset();
+        });
+    </script>
+</body>
+</html>
