@@ -1,5 +1,6 @@
 --only-binary=:all:
 Flask==2.2.5
-Pillow==10.2.0
+Pillow==10.4.0
 gunicorn==21.2.0
 python-dotenv==1.0.0
+
