@@ -1,3 +1,4 @@
+--only-binary=:all:
 Flask==2.2.5
 Pillow==10.2.0
 gunicorn==21.2.0
