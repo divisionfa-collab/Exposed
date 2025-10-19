@@ -14,20 +14,21 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
             min-height: 100vh;
-            color: #333;
+            color: #e0e0e0;
         }
 
         /* Header Styles */
         header {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(20, 25, 45, 0.95);
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 20px rgba(102, 126, 234, 0.3);
             padding: 1rem 2rem;
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 2px solid rgba(102, 126, 234, 0.3);
         }
 
         .logo {
@@ -38,16 +39,13 @@
         }
 
         .logo img {
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-            transition: transform 0.3s ease;
-        }
-
-        .logo img:hover {
-            transform: rotate(5deg) scale(1.1);
+            filter: drop-shadow(0 0 10px rgba(102, 126, 234, 0.5));
         }
 
         .logo h1 {
-            color: #2a5298;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             font-size: 1.8rem;
             font-weight: bold;
         }
@@ -59,7 +57,7 @@
         }
 
         nav a {
-            color: #1e3c72;
+            color: #a0aec0;
             text-decoration: none;
             font-weight: 500;
             padding: 0.5rem 1rem;
@@ -69,9 +67,10 @@
         }
 
         nav a:hover {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
 
         /* Main Container */
@@ -83,44 +82,50 @@
 
         /* Hero Section */
         .hero {
-            background: white;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
             border-radius: 20px;
             padding: 3rem;
             margin: 2rem auto;
             text-align: center;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
             animation: fadeInUp 0.8s ease;
+            border: 1px solid rgba(102, 126, 234, 0.2);
         }
 
         .hero h2 {
-            color: #2a5298;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
 
         .hero p {
-            color: #666;
+            color: #a0aec0;
             font-size: 1.2rem;
             line-height: 1.8;
         }
 
         /* Articles Section */
         .articles {
-            background: white;
+            background: rgba(20, 25, 45, 0.6);
             border-radius: 20px;
             padding: 2rem;
             margin: 2rem auto;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
             animation: fadeInUp 0.8s ease 0.2s both;
+            border: 1px solid rgba(102, 126, 234, 0.2);
         }
 
         .articles h2 {
-            color: #2a5298;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             font-size: 2rem;
             margin-bottom: 2rem;
             text-align: center;
             padding-bottom: 1rem;
-            border-bottom: 3px solid #e0e0e0;
+            border-bottom: 3px solid rgba(102, 126, 234, 0.3);
         }
 
         .articles-grid {
@@ -131,42 +136,47 @@
         }
 
         article {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
             padding: 2rem;
             border-radius: 15px;
             transition: all 0.3s ease;
-            border-right: 5px solid #2a5298;
+            border-right: 5px solid #667eea;
+            border: 1px solid rgba(102, 126, 234, 0.2);
         }
 
         article:hover {
             transform: translateX(-10px);
-            box-shadow: 0 5px 20px rgba(42, 82, 152, 0.2);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            border-right-color: #764ba2;
         }
 
         article h3 {
-            color: #1e3c72;
+            color: #667eea;
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
 
         article p {
-            color: #555;
+            color: #a0aec0;
             line-height: 1.8;
             font-size: 1rem;
         }
 
         /* Video Section */
         .video {
-            background: white;
+            background: rgba(20, 25, 45, 0.6);
             border-radius: 20px;
             padding: 2rem;
             margin: 2rem auto;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
             animation: fadeInUp 0.8s ease 0.4s both;
+            border: 1px solid rgba(102, 126, 234, 0.2);
         }
 
         .video h2 {
-            color: #2a5298;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             font-size: 2rem;
             margin-bottom: 2rem;
             text-align: center;
@@ -178,7 +188,7 @@
             height: 0;
             overflow: hidden;
             border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
         }
 
         .video-container iframe {
@@ -192,42 +202,104 @@
 
         /* Interactive Sections */
         .interactive-section {
-            background: white;
+            background: rgba(20, 25, 45, 0.6);
             border-radius: 20px;
             padding: 2rem;
             margin: 2rem auto;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
             animation: fadeInUp 0.8s ease 0.6s both;
+            border: 1px solid rgba(102, 126, 234, 0.2);
         }
 
         .interactive-section h2 {
-            color: #2a5298;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             font-size: 2rem;
             margin-bottom: 1.5rem;
             text-align: center;
         }
 
+        /* Quiz Styles */
         .quiz {
             text-align: center;
             padding: 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
             border-radius: 20px;
-            color: white;
+            border: 1px solid rgba(102, 126, 234, 0.3);
         }
 
         .quiz h2 {
-            color: white;
+            color: #667eea;
             margin-bottom: 1rem;
         }
 
-        .quiz p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+        .quiz-container {
+            display: none;
+            text-align: right;
+            max-width: 700px;
+            margin: 2rem auto;
         }
 
-        .quiz button, .survey button {
-            background: white;
-            color: #2a5298;
+        .quiz-container.active {
+            display: block;
+        }
+
+        .question-card {
+            background: rgba(20, 25, 45, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .question-text {
+            font-size: 1.3rem;
+            color: #e0e0e0;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .option {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #e0e0e0;
+        }
+
+        .option:hover {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+            transform: translateX(-5px);
+        }
+
+        .option.selected {
+            background: rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+
+        .option.correct {
+            background: rgba(72, 187, 120, 0.3);
+            border-color: #48bb78;
+        }
+
+        .option.wrong {
+            background: rgba(250, 112, 154, 0.3);
+            border-color: #fa709a;
+        }
+
+        .quiz-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
             border: none;
             padding: 1rem 3rem;
             font-size: 1.1rem;
@@ -235,36 +307,80 @@
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            margin-top: 1rem;
         }
 
-        .quiz button:hover, .survey button:hover {
+        .quiz-button:hover {
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .quiz-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .quiz-result {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 15px;
+            margin-top: 2rem;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .quiz-result.show {
+            display: block;
+        }
+
+        .quiz-result h3 {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .quiz-result p {
+            font-size: 1.2rem;
+            color: #a0aec0;
+            margin-bottom: 1rem;
+        }
+
+        .score {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 1rem 0;
         }
 
         /* Survey Section */
         .survey {
-            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            background: linear-gradient(135deg, rgba(250, 112, 154, 0.2) 0%, rgba(254, 225, 64, 0.2) 100%);
             padding: 2rem;
             border-radius: 20px;
             margin-top: 2rem;
+            border: 1px solid rgba(250, 112, 154, 0.3);
         }
 
         .survey h2 {
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            color: #fa709a;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .survey form {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(20, 25, 45, 0.8);
             padding: 2rem;
             border-radius: 15px;
             margin-top: 1.5rem;
+            border: 1px solid rgba(250, 112, 154, 0.3);
         }
 
         .survey label {
-            color: #333;
+            color: #e0e0e0;
             font-weight: 600;
             font-size: 1.1rem;
             display: block;
@@ -274,17 +390,37 @@
         .survey select {
             width: 100%;
             padding: 0.8rem;
-            border: 2px solid #e0e0e0;
+            border: 2px solid rgba(102, 126, 234, 0.3);
             border-radius: 10px;
             font-size: 1rem;
             margin-bottom: 1.5rem;
             transition: all 0.3s ease;
+            background: rgba(20, 25, 45, 0.8);
+            color: #e0e0e0;
         }
 
         .survey select:focus {
-            border-color: #2a5298;
+            border-color: #667eea;
             outline: none;
-            box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.1);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+        }
+
+        .survey button {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: #1a1f3a;
+            border: none;
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(250, 112, 154, 0.4);
+        }
+
+        .survey button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 25px rgba(250, 112, 154, 0.6);
         }
 
         /* Tips Cards */
@@ -296,18 +432,19 @@
         }
 
         .tip-card {
-            background: white;
+            background: rgba(20, 25, 45, 0.8);
             padding: 1.5rem;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
-            border-top: 4px solid #2a5298;
+            border-top: 4px solid #667eea;
+            border: 1px solid rgba(102, 126, 234, 0.2);
         }
 
         .tip-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
         }
 
         .tip-icon {
@@ -316,26 +453,29 @@
         }
 
         .tip-card h4 {
-            color: #1e3c72;
+            color: #667eea;
             margin-bottom: 0.5rem;
         }
 
         .tip-card p {
-            color: #666;
+            color: #a0aec0;
             font-size: 0.95rem;
         }
 
         /* Footer */
         footer {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(20, 25, 45, 0.95);
             text-align: center;
             padding: 2rem;
             margin-top: 3rem;
-            box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 -2px 20px rgba(102, 126, 234, 0.3);
+            border-top: 2px solid rgba(102, 126, 234, 0.3);
         }
 
         footer p {
-            color: #2a5298;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             font-weight: 500;
         }
 
@@ -463,42 +603,56 @@
             </div>
         </section>
 
-        <!-- Interactive Sections -->
+        <!-- Interactive Quiz Section -->
         <section class="interactive-section">
-            <!-- Quiz Section -->
             <div class="quiz">
                 <h2>🎮 لعبة: اختبر وعيك الأمني</h2>
                 <p>هل تستطيع التمييز بين الرابط الآمن والمزيف؟ اختبر معلوماتك الآن!</p>
-                <button onclick="startQuiz()">ابدأ التحدي</button>
+                <button class="quiz-button" onclick="startQuiz()" id="startBtn">ابدأ التحدي</button>
+                
+                <div class="quiz-container" id="quizContainer">
+                    <div class="question-card" id="questionCard">
+                        <div class="question-text" id="questionText"></div>
+                        <div class="options" id="optionsContainer"></div>
+                    </div>
+                    <button class="quiz-button" onclick="nextQuestion()" id="nextBtn" disabled>السؤال التالي</button>
+                </div>
+
+                <div class="quiz-result" id="quizResult">
+                    <h3>🎉 انتهت اللعبة!</h3>
+                    <div class="score" id="scoreDisplay"></div>
+                    <p id="resultMessage"></p>
+                    <button class="quiz-button" onclick="restartQuiz()">إعادة المحاولة</button>
+                </div>
             </div>
 
             <!-- Survey Section -->
             <div class="survey">
-                <h2>📝 قيّم مستوى أمانك الرقمي</h2>
-                <form>
+                <h2>📊 قيّم مستوى أمانك الرقمي</h2>
+                <form id="surveyForm">
                     <label>هل تستخدم كلمة مرور مختلفة لكل حساب؟</label>
-                    <select>
+                    <select required>
                         <option value="">اختر إجابتك</option>
-                        <option>نعم، دائماً</option>
-                        <option>أحياناً</option>
-                        <option>لا، أستخدم نفس كلمة المرور</option>
+                        <option value="3">نعم، دائماً</option>
+                        <option value="2">أحياناً</option>
+                        <option value="1">لا، أستخدم نفس كلمة المرور</option>
                     </select>
 
                     <label>هل فعّلت المصادقة الثنائية (2FA)؟</label>
-                    <select>
+                    <select required>
                         <option value="">اختر إجابتك</option>
-                        <option>نعم، على جميع الحسابات</option>
-                        <option>على بعض الحسابات فقط</option>
-                        <option>لا، لم أفعّلها</option>
+                        <option value="3">نعم، على جميع الحسابات</option>
+                        <option value="2">على بعض الحسابات فقط</option>
+                        <option value="1">لا، لم أفعّلها</option>
                     </select>
 
                     <label>كم مرة تقوم بتحديث كلمات المرور؟</label>
-                    <select>
+                    <select required>
                         <option value="">اختر إجابتك</option>
-                        <option>كل 3 أشهر</option>
-                        <option>كل 6 أشهر</option>
-                        <option>سنوياً</option>
-                        <option>نادراً ما أقوم بتحديثها</option>
+                        <option value="3">كل 3 أشهر</option>
+                        <option value="2">كل 6 أشهر</option>
+                        <option value="2">سنوياً</option>
+                        <option value="1">نادراً ما أقوم بتحديثها</option>
                     </select>
 
                     <button type="submit">احصل على تقييمك</button>
@@ -513,86 +667,176 @@
     </footer>
 
     <script>
-        function startQuiz() {
-            const questions = [
-                {
-                    question: "أي من هذه الروابط يبدو آمناً؟",
-                    options: [
-                        "https://www.facebook.com",
-                        "http://faceb00k.com", 
-                        "https://facebοοk.com"
-                    ],
-                    correct: 0
-                },
-                {
-                    question: "ما هي علامة الموقع الآمن؟",
-                    options: [
-                        "عنوان يبدأ بـ http://",
-                        "عنوان يبدأ بـ https:// مع قفل أخضر",
-                        "أي موقع مشهور"
-                    ],
-                    correct: 1
-                },
-                {
-                    question: "متى يجب عليك إعطاء كلمة المرور؟",
-                    options: [
-                        "عندما يطلبها موظف البنك عبر الهاتف",
-                        "في رسالة بريد إلكتروني رسمية",
-                        "فقط على الموقع الرسمي مباشرة"
-                    ],
-                    correct: 2
-                }
-            ];
-
-            let score = 0;
-            let currentQuestion = 0;
-
-            function showQuestion() {
-                if (currentQuestion < questions.length) {
-                    const q = questions[currentQuestion];
-                    const answer = prompt(
-                        q.question + "\n\n" + 
-                        q.options.map((opt, i) => `${i + 1}. ${opt}`).join("\n") +
-                        "\n\nأدخل رقم الإجابة (1-3):"
-                    );
-
-                    if (answer && parseInt(answer) - 1 === q.correct) {
-                        score++;
-                        alert("✅ إجابة صحيحة! أحسنت!");
-                    } else {
-                        alert("❌ إجابة خاطئة. الإجابة الصحيحة هي: " + q.options[q.correct]);
-                    }
-
-                    currentQuestion++;
-                    showQuestion();
-                } else {
-                    alert(`🎉 انتهت اللعبة!\nنتيجتك: ${score}/${questions.length}\n\n` + 
-                          (score === questions.length ? "ممتاز! أنت خبير في الأمان الرقمي! 🏆" :
-                           score >= questions.length/2 ? "جيد! لكن يمكنك التحسن أكثر! 💪" :
-                           "تحتاج للمزيد من التعلم حول الأمان الرقمي 📚"));
-                }
+        const questions = [
+            {
+                question: "أي من هذه الروابط يبدو آمناً؟",
+                options: [
+                    "https://www.facebook.com",
+                    "http://faceb00k.com", 
+                    "https://facebοοk.com"
+                ],
+                correct: 0,
+                explanation: "الرابط الصحيح يبدأ بـ https:// ويحتوي على اسم النطاق الصحيح"
+            },
+            {
+                question: "ما هي علامة الموقع الآمن؟",
+                options: [
+                    "عنوان يبدأ بـ http://",
+                    "عنوان يبدأ بـ https:// مع قفل أخضر",
+                    "أي موقع مشهور"
+                ],
+                correct: 1,
+                explanation: "المواقع الآمنة تستخدم https:// وتظهر أيقونة قفل في المتصفح"
+            },
+            {
+                question: "متى يجب عليك إعطاء كلمة المرور؟",
+                options: [
+                    "عندما يطلبها موظف البنك عبر الهاتف",
+                    "في رسالة بريد إلكتروني رسمية",
+                    "فقط على الموقع الرسمي مباشرة"
+                ],
+                correct: 2,
+                explanation: "لا تشارك كلمة المرور أبداً عبر الهاتف أو البريد الإلكتروني"
+            },
+            {
+                question: "ما هو أفضل طول لكلمة المرور؟",
+                options: [
+                    "6 أحرف على الأقل",
+                    "12 حرفاً أو أكثر",
+                    "8 أحرف كافية"
+                ],
+                correct: 1,
+                explanation: "كلمات المرور الطويلة (12+ حرف) أكثر أماناً وصعبة الاختراق"
+            },
+            {
+                question: "ماذا تفعل عند استلام بريد مشبوه؟",
+                options: [
+                    "أفتحه لأتحقق من محتواه",
+                    "أحذفه مباشرة دون فتحه",
+                    "أنقر على الروابط لمعرفة مصدرها"
+                ],
+                correct: 1,
+                explanation: "احذف الرسائل المشبوهة فوراً ولا تنقر على أي روابط فيها"
             }
+        ];
 
+        let currentQuestion = 0;
+        let score = 0;
+        let selectedAnswer = null;
+
+        function startQuiz() {
+            document.getElementById('startBtn').style.display = 'none';
+            document.getElementById('quizContainer').classList.add('active');
+            currentQuestion = 0;
+            score = 0;
             showQuestion();
         }
 
-        // Form submission handler
-        document.querySelector('.survey form').addEventListener('submit', function(e) {
+        function showQuestion() {
+            if (currentQuestion >= questions.length) {
+                showResult();
+                return;
+            }
+
+            const question = questions[currentQuestion];
+            document.getElementById('questionText').textContent = `السؤال ${currentQuestion + 1} من ${questions.length}: ${question.question}`;
+            
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+            
+            question.options.forEach((option, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'option';
+                optionDiv.textContent = option;
+                optionDiv.onclick = () => selectAnswer(index);
+                optionsContainer.appendChild(optionDiv);
+            });
+
+            document.getElementById('nextBtn').disabled = true;
+            selectedAnswer = null;
+        }
+
+        function selectAnswer(index) {
+            const options = document.querySelectorAll('.option');
+            options.forEach((opt, i) => {
+                opt.classList.remove('selected', 'correct', 'wrong');
+                if (i === index) {
+                    opt.classList.add('selected');
+                }
+            });
+
+            selectedAnswer = index;
+            document.getElementById('nextBtn').disabled = false;
+        }
+
+        function nextQuestion() {
+            const question = questions[currentQuestion];
+            const options = document.querySelectorAll('.option');
+            
+            // Show correct/wrong answers
+            options.forEach((opt, i) => {
+                if (i === question.correct) {
+                    opt.classList.add('correct');
+                } else if (i === selectedAnswer) {
+                    opt.classList.add('wrong');
+                }
+            });
+
+            if (selectedAnswer === question.correct) {
+                score++;
+            }
+
+            // Disable options and show explanation
+            options.forEach(opt => opt.onclick = null);
+            
+            setTimeout(() => {
+                currentQuestion++;
+                showQuestion();
+            }, 2000);
+        }
+
+        function showResult() {
+            document.getElementById('quizContainer').style.display = 'none';
+            const resultDiv = document.getElementById('quizResult');
+            resultDiv.classList.add('show');
+            
+            document.getElementById('scoreDisplay').textContent = `${score}/${questions.length}`;
+            
+            let message = '';
+            const percentage = (score / questions.length) * 100;
+            
+            if (percentage === 100) {
+                message = "ممتاز! أنت خبير في الأمان الرقمي! 🏆";
+            } else if (percentage >= 60) {
+                message = "جيد! لكن يمكنك التحسن أكثر! 💪";
+            } else {
+                message = "تحتاج للمزيد من التعلم حول الأمان الرقمي 📚";
+            }
+            
+            document.getElementById('resultMessage').textContent = message;
+        }
+
+        function restartQuiz() {
+            document.getElementById('quizResult').classList.remove('show');
+            document.getElementById('startBtn').style.display = 'inline-block';
+            document.getElementById('quizContainer').classList.remove('active');
+        }
+
+        // Survey form handler
+        document.getElementById('surveyForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const selects = this.querySelectorAll('select');
-            let score = 0;
+            let totalScore = 0;
             
             selects.forEach(select => {
-                if (select.selectedIndex === 1) score += 3;
-                else if (select.selectedIndex === 2) score += 2;
-                else if (select.selectedIndex === 3) score += 1;
+                totalScore += parseInt(select.value) || 0;
             });
             
             let message = "";
-            if (score >= 8) {
+            if (totalScore >= 8) {
                 message = "🏆 ممتاز! مستوى أمانك الرقمي عالٍ جداً. استمر في الحفاظ على هذا المستوى!";
-            } else if (score >= 5) {
+            } else if (totalScore >= 5) {
                 message = "👍 جيد! لديك مستوى أمان معقول، لكن يمكنك تحسينه أكثر.";
             } else {
                 message = "⚠️ تحذير! مستوى أمانك الرقمي يحتاج لتحسين عاجل. راجع النصائح أعلاه.";

@@ -5,13 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تواصل معنا | مكشوف؟ / Exposed!</title>
     <link rel="icon" type="image/x-icon" href="../assets/images/icons/favicon.ico">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/responsive.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(20, 25, 45, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(102, 126, 234, 0.3);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .logo img {
+            filter: drop-shadow(0 0 10px rgba(102, 126, 234, 0.5));
+        }
+
+        .logo h1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .logo h1 span {
+            opacity: 0.8;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #a0aec0;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Main Section */
         .sections {
             padding: 4rem 2rem;
-            background: white;
+            min-height: calc(100vh - 200px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+
         .cards-container {
             display: flex;
             justify-content: center;
@@ -19,68 +92,148 @@
             max-width: 800px;
             margin: 0 auto;
         }
+
         .card {
             width: 100%;
-            background: white;
-            padding: 2rem;
+            background: rgba(20, 25, 45, 0.8);
+            padding: 2.5rem;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.2);
         }
+
         .card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
         }
+
         .card-icon {
             width: 70px;
             height: 70px;
             margin: 0 auto 1.5rem;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
             color: white;
+            animation: iconFloat 3s ease infinite;
         }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .card h2 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
         form {
             display: flex;
             flex-direction: column;
         }
+
         form label {
             margin: 10px 0 5px;
             font-weight: bold;
             text-align: right;
+            color: #e0e0e0;
         }
+
         form input, form textarea {
-            padding: 10px;
-            border: 1px solid #ccc;
+            padding: 12px;
+            border: 1px solid rgba(102, 126, 234, 0.3);
             border-radius: 8px;
             margin-bottom: 15px;
             font-size: 1rem;
+            background: rgba(10, 14, 39, 0.6);
+            color: #e0e0e0;
+            transition: all 0.3s ease;
         }
+
+        form input:focus, form textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+        }
+
+        form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
         form button {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 1.5rem;
             border: none;
             border-radius: 25px;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 1.1rem;
         }
+
         form button:hover {
             transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(42, 82, 152, 0.4);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
         }
+
         #contactResult {
             margin-top: 15px;
             text-align: center;
             font-weight: bold;
+            padding: 1rem;
+            border-radius: 10px;
+            display: none;
+        }
+
+        #contactResult.show {
+            display: block;
+        }
+
+        #contactResult.success {
+            background: rgba(72, 187, 120, 0.2);
+            border: 1px solid rgba(72, 187, 120, 0.4);
+            color: #48bb78;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(20, 25, 45, 0.95);
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 -2px 20px rgba(102, 126, 234, 0.3);
+            border-top: 2px solid rgba(102, 126, 234, 0.3);
+        }
+
+        footer p {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sections {
+                padding: 2rem 1rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- ✅ الهيدر -->
+    <!-- Header -->
     <header>
         <div class="logo">
             <img src="../assets/images/logo.png" alt="Exposed Logo" width="60">
@@ -95,42 +248,56 @@
         </nav>
     </header>
 
-    <!-- ✅ نموذج تواصل -->
+    <!-- Contact Form Section -->
     <section class="sections">
         <div class="cards-container">
             <div class="card">
                 <div class="card-icon">📩</div>
-                <h2 style="text-align:center;">أرسل لنا رسالة</h2>
-                <form id="contactForm">
+                <h2>أرسل لنا رسالة</h2>
+                <form id="contactForm" onsubmit="handleSubmit(event)">
                     <label for="name">الاسم:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" required placeholder="أدخل اسمك الكامل">
 
                     <label for="email">البريد الإلكتروني:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" required placeholder="example@email.com">
+
+                    <label for="subject">الموضوع:</label>
+                    <input type="text" id="subject" name="subject" required placeholder="موضوع الرسالة">
 
                     <label for="message">الرسالة:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <textarea id="message" name="message" required placeholder="اكتب رسالتك هنا..."></textarea>
 
-                    <button type="submit">إرسال</button>
+                    <button type="submit">إرسال الرسالة</button>
                 </form>
                 <div id="contactResult"></div>
             </div>
         </div>
     </section>
 
-    <!-- ✅ الفوتر -->
+    <!-- Footer -->
     <footer>
         <p>© 2025 مكشوف؟ / Exposed! جميع الحقوق محفوظة</p>
     </footer>
 
-    <!-- سكربت بسيط -->
     <script>
-        document.getElementById("contactForm").addEventListener("submit", function(e) {
-            e.preventDefault();
-            document.getElementById("contactResult").style.color = "green";
-            document.getElementById("contactResult").textContent = "✅ تم إرسال رسالتك بنجاح (محاكاة).";
-            this.reset();
-        });
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const resultDiv = document.getElementById('contactResult');
+            const form = document.getElementById('contactForm');
+            
+            // Simulate form submission
+            resultDiv.textContent = "✅ تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.";
+            resultDiv.className = "show success";
+            
+            // Reset form
+            form.reset();
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                resultDiv.classList.remove('show');
+            }, 5000);
+        }
     </script>
 </body>
 </html>

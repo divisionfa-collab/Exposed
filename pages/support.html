@@ -5,15 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>قسم المساعدة | مكشوف؟ / Exposed!</title>
     <link rel="icon" type="image/x-icon" href="../assets/images/icons/favicon.ico">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/responsive.css">
-    <script src="../assets/js/password-tool.js"></script>
-    <script src="../assets/js/support.js"></script>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(20, 25, 45, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(102, 126, 234, 0.3);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .logo img {
+            filter: drop-shadow(0 0 10px rgba(102, 126, 234, 0.5));
+        }
+
+        .logo h1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .logo h1 span {
+            opacity: 0.8;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #a0aec0;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Main Section */
         .sections {
             padding: 4rem 2rem;
-            background: white;
         }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: #a0aec0;
+            font-size: 1.2rem;
+        }
+
         .cards-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -21,65 +106,135 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+
         .card {
-            background: white;
+            background: rgba(20, 25, 45, 0.8);
             padding: 2rem;
             border-radius: 20px;
             text-align: center;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(102, 126, 234, 0.2);
         }
+
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
         }
+
         .card-icon {
             width: 70px;
             height: 70px;
-            margin: 0 auto 1.2rem;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
             color: white;
+            animation: iconFloat 3s ease infinite;
         }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
         .card h3 {
-            color: #1e3c72;
+            color: #667eea;
             font-size: 1.6rem;
             margin-bottom: 1rem;
         }
+
         .card p {
-            color: #666;
+            color: #a0aec0;
             line-height: 1.6;
             font-size: 1rem;
             margin-bottom: 1.5rem;
         }
+
+        .card ol {
+            text-align: right;
+            padding-right: 20px;
+            color: #a0aec0;
+            line-height: 2;
+        }
+
+        .card ol li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Tool Styles */
         .tool input, .check-link input {
             padding: 0.8rem;
             width: 80%;
             margin: 0.5rem auto;
-            border: 1px solid #ccc;
+            border: 1px solid rgba(102, 126, 234, 0.3);
             border-radius: 8px;
+            background: rgba(10, 14, 39, 0.6);
+            color: #e0e0e0;
+            display: block;
         }
+
+        .tool input:focus, .check-link input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+        }
+
         .tool button, .check-link button {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             border: none;
             padding: 0.8rem 1.5rem;
             border-radius: 25px;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-weight: 600;
+            margin-top: 1rem;
         }
+
         .tool button:hover, .check-link button:hover {
             transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(42, 82, 152, 0.4);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        #linkResult {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 10px;
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(20, 25, 45, 0.95);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            box-shadow: 0 -2px 20px rgba(102, 126, 234, 0.3);
+            border-top: 2px solid rgba(102, 126, 234, 0.3);
+        }
+
+        footer p {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- ✅ الهيدر -->
+    <!-- Header -->
     <header>
         <div class="logo">
             <img src="../assets/images/logo.png" alt="Exposed Logo" width="60">
@@ -94,7 +249,7 @@
         </nav>
     </header>
 
-    <!-- ✅ قسم المساعدة -->
+    <!-- Main Section -->
     <section class="sections">
         <div class="section-title">
             <h2>🛠️ أدوات المساعدة</h2>
@@ -102,36 +257,39 @@
         </div>
 
         <div class="cards-container">
-            <!-- ✅ دليل المساعدة -->
+            <!-- Guide Card -->
             <div class="card guide">
                 <div class="card-icon">📌</div>
                 <h3>ماذا تفعل إذا تم اختراق حسابك؟</h3>
                 <p>اتبع الخطوات التالية لحماية نفسك وتقليل الضرر</p>
-                <ol style="text-align:right; padding-right:20px;">
-                    <li>غير كلمة المرور فورًا.</li>
+                <ol>
+                    <li>غير كلمة المرور فوراً.</li>
                     <li>فعّل المصادقة الثنائية (2FA).</li>
                     <li>راجع الأجهزة المتصلة بحسابك.</li>
                     <li>أبلغ الجهة الرسمية أو المنصة.</li>
+                    <li>افحص بريدك الإلكتروني البديل.</li>
+                    <li>غيّر كلمات المرور لحسابات أخرى مشابهة.</li>
                 </ol>
             </div>
 
-            <!-- ✅ أداة توليد كلمات مرور -->
+            <!-- Password Generator -->
             <div class="card tool">
                 <div class="card-icon">🔑</div>
                 <h3>مولّد كلمات مرور</h3>
                 <p>اختر طول كلمة المرور ثم اضغط توليد</p>
-                <input type="number" id="passLength" value="12" min="6" max="32">
-                <button type="button" onclick="showPassword()">توليد</button>
-                <p><strong>النتيجة:</strong></p>
-                <input type="text" id="generatedPass" readonly>
+                <label style="color: #a0aec0; margin: 10px 0;">الطول:</label>
+                <input type="number" id="passLength" value="16" min="8" max="32">
+                <button type="button" onclick="generatePassword()">توليد</button>
+                <p style="margin-top: 1rem;"><strong>النتيجة:</strong></p>
+                <input type="text" id="generatedPass" readonly style="font-family: monospace;">
             </div>
 
-            <!-- ✅ أداة فحص الروابط -->
+            <!-- Link Checker -->
             <div class="card check-link">
                 <div class="card-icon">🔗</div>
                 <h3>فحص الروابط</h3>
-                <p>أدخل الرابط للتحقق مما إذا كان آمنًا</p>
-                <form id="linkForm">
+                <p>أدخل الرابط للتحقق مما إذا كان آمناً</p>
+                <form id="linkForm" onsubmit="checkLink(event)">
                     <input type="url" id="linkInput" placeholder="https://example.com" required>
                     <button type="submit">فحص</button>
                 </form>
@@ -140,9 +298,56 @@
         </div>
     </section>
 
-    <!-- ✅ الفوتر -->
+    <!-- Footer -->
     <footer>
         <p>© 2025 مكشوف؟ / Exposed! جميع الحقوق محفوظة</p>
     </footer>
+
+    <script>
+        function generatePassword() {
+            const length = parseInt(document.getElementById('passLength').value);
+            const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:,.<>?";
+            let password = "";
+            
+            for (let i = 0; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * charset.length);
+                password += charset[randomIndex];
+            }
+            
+            document.getElementById('generatedPass').value = password;
+        }
+
+        function checkLink(event) {
+            event.preventDefault();
+            const linkInput = document.getElementById('linkInput').value;
+            const resultDiv = document.getElementById('linkResult');
+            
+            // Basic security checks
+            const isHttps = linkInput.startsWith('https://');
+            const hasSuspiciousChars = /[^\x00-\x7F]/.test(linkInput); // Non-ASCII characters
+            const hasIPAddress = /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/.test(linkInput);
+            
+            let message = '';
+            let color = '';
+            
+            if (!isHttps) {
+                message = '⚠️ تحذير: الرابط لا يستخدم HTTPS (غير آمن)';
+                color = '#fa709a';
+            } else if (hasSuspiciousChars) {
+                message = '⚠️ تحذير: الرابط يحتوي على أحرف مشبوهة';
+                color = '#fa709a';
+            } else if (hasIPAddress) {
+                message = '⚠️ تنبيه: الرابط يحتوي على عنوان IP (قد يكون مشبوهاً)';
+                color = '#fee140';
+            } else {
+                message = '✅ الرابط يبدو آمناً (لكن كن حذراً دائماً)';
+                color = '#48bb78';
+            }
+            
+            resultDiv.innerHTML = message;
+            resultDiv.style.color = color;
+            resultDiv.style.display = 'block';
+        }
+    </script>
 </body>
 </html>
